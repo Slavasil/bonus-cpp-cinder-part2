@@ -15,6 +15,7 @@ private:
 	void drawDashedLines();
     void drawOlympicRings();
     void drawCrossedRectangle();
+	void drawCircleWithRedCross();
 
 	void drawDashedLine(float x, float y, float length, float a, float b);
 	void drawAlternatingDashedLine(float x, float y, float length, float a, float b, float c, float d);
