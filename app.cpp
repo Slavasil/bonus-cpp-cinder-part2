@@ -13,6 +13,7 @@ void BonusApp::draw() // с setup не срослось :(
     drawOlympicRings();
     drawCrossedRectangle();
     drawCircleWithRedCross();
+    drawConcentricCircles();
 }
 
 void BonusApp::drawDashedLines()
@@ -63,6 +64,22 @@ void BonusApp::drawCircleWithRedCross()
     gl::color(1.0f, 0.0f, 0.0f);
     gl::drawLine(vec2(x + radius, y), vec2(x + radius, y + radius * 2));
     gl::drawLine(vec2(x, y + radius), vec2(x + radius * 2, y + radius));
+}
+
+void BonusApp::drawConcentricCircles()
+{
+    const float x = 145.0f;
+    const float y = 300.0f;
+    const float minRadius = 6.0f;
+    const int count = 10;
+    const float step = 6.0f;
+    gl::color(0.0f, 0.0f, 0.0f);
+    float r = minRadius;
+    for (int i = 0; i < count; ++i)
+    {
+        gl::drawStrokedCircle(vec2(x, y), r, 1.0f, 45);
+        r += step;
+    }
 }
 
 void BonusApp::drawDashedLine(float x, float y, float length, float a, float b)
