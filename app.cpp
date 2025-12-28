@@ -43,7 +43,12 @@ void BonusApp::drawOlympicRings()
 
 void BonusApp::drawCrossedRectangle()
 {
-
+    const float x = 300.0f;
+    const float y = 15.0f;
+    gl::color(0.0f, 0.0f, 0.0f);
+    gl::drawStrokedRect(Rectf(x, y, x + 180.0f, y + 120.0f));
+    gl::drawLine(vec2(x, y), vec2(x + 180.0f, y + 120.0f));
+    gl::drawLine(vec2(x + 180.0f, y), vec2(x, y + 120.0f));
 }
 
 void BonusApp::drawDashedLine(float x, float y, float length, float a, float b)
